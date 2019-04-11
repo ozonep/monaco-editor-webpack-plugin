@@ -1,7 +1,7 @@
 {
-  "name": "monaco-editor-webpack-plugin",
-  "version": "1.7.0",
-  "description": "A webpack plugin for the Monaco Editor",
+  "name": "monaco-editor-webpack-plugin-updated",
+  "version": "1.8.0",
+  "description": "A webpack plugin for the Monaco Editor with updated dependencies and fixed issues",
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/monaco-editor-webpack-plugin.git"
+    "url": "git+https://github.com/ozonep/monaco-editor-webpack-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -17,24 +17,24 @@
     "editor",
     "loader"
   ],
-  "author": "Microsoft Corporation",
+  "author": "ozonep",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Microsoft/monaco-editor-webpack-plugin/issues"
+    "url": "https://github.com/ozonep/monaco-editor-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/Microsoft/monaco-editor-webpack-plugin#readme",
+  "homepage": "https://github.com/ozonep/monaco-editor-webpack-plugin#readme",
   "peerDependencies": {
-    "webpack": "^4.5.0",
-    "monaco-editor": "^0.15.1"
+    "webpack": "^4.29.6",
+    "monaco-editor": "^0.16.2"
   },
   "devDependencies": {
-    "css-loader": "^1.0.1",
-    "monaco-editor": "^0.15.6",
+    "css-loader": "^2.1.1",
+    "monaco-editor": "^0.16.2",
     "style-loader": "^0.23.1",
-    "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "@types/webpack": "^4.4.19"
+    "@types/webpack": "^4.4.27"
   }
 }
