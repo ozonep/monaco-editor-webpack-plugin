@@ -1,6 +1,6 @@
 {
   "name": "monaco-editor-webpack-plugin-updated",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "A webpack plugin for the Monaco Editor with updated dependencies and fixed issues",
   "main": "index.js",
   "typings": "./index.d.ts",
