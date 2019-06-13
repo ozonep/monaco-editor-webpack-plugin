@@ -18,7 +18,7 @@ const LANGUAGES = require('./languages');
 const FEATURES = require('./features');
 
 function resolveMonacoPath(filePath) {
-  return require.resolve(path.join('monaco-editor/esm', filePath));
+  return require.resolve(path.join('monaco-editor-no-lang/esm', filePath));
 }
 
 const languagesById = fromPairs(
@@ -95,21 +95,8 @@ function createLoaderRules(languages, features, workers, outputPath, publicPath)
   const featurePaths = flatArr(features.map(({ entry }) => entry).filter(Boolean));
   const workerPaths = fromPairs(workers.map(({ label, output }) => [label, path.join(outputPath, output)]));
   if (workerPaths['typescript']) {
-    // javascript shares the same worker
     workerPaths['javascript'] = workerPaths['typescript'];
   }
-  if (workerPaths['css']) {
-    // scss and less share the same worker
-    workerPaths['less'] = workerPaths['css'];
-    workerPaths['scss'] = workerPaths['css'];
-  }
-
-  if (workerPaths['html']) {
-    // handlebars, razor and html share the same worker
-    workerPaths['handlebars'] = workerPaths['html'];
-    workerPaths['razor'] = workerPaths['html'];
-  }
-
   const globals = {
     'MonacoEnvironment': `(function (paths) {
       function stripTrailingSlash(str) {
@@ -125,7 +112,7 @@ function createLoaderRules(languages, features, workers, outputPath, publicPath)
   };
   return [
     {
-      test: /monaco-editor[/\\]esm[/\\]vs[/\\]editor[/\\]editor.(api|main).js/,
+      test: /monaco-editor-no-lang[/\\]esm[/\\]vs[/\\]editor[/\\]editor.(api|main).js/,
       use: [
         {
           loader: INCLUDE_LOADER_PATH,
